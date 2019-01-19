@@ -14,34 +14,47 @@
 //ReactDOM.render(ele1,document.getElementById('app'))
 
 class App extends React.Component {
+    state ={
+        name:'app component'
+    }
     render(){
         return(
           <div>
-            <Header />
-            <Content />
-            <Footer /> 
+            <p>{this.state.name}</p>
+            <Header name='header props'/>
+            <Content name='content' />
+            <Footer name='footer' /> 
             </div>
         )
     }
 }
 class Header extends React.Component {
+    state={
+        name:'header component'
+    }
     render(){
         return(
-            <header>header</header>
+            <header>{this.props.name} and state is {this.state.name}</header>
         )
     }
 }
 class Content extends React.Component {
+    state={
+        name:'content component'
+    }
     render(){
         return(
-            <content>content</content>
+            <content>{this.props.name}and state is {this.state.name}</content>
         )
     }
 }
 class Footer extends React.Component {
+    state={
+        name:'footer component'
+    }
     render(){
         return (
-            <footer>footer</footer>
+            <footer>{this.props.name}and state is {this.state.name}</footer>
         )
     }
 }
