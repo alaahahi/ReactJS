@@ -21,6 +21,17 @@ this.setState(
   }
 )
   }
+  changetext = (e) =>{
+    this.setState(
+      {
+        name:e.target.value
+      }
+      )
+  }
+  submitok = (e) => {
+    e.preventDefault();
+    console.log(this.state.age)
+  }
   render() {
     return (
       <div className="App">
@@ -28,7 +39,17 @@ this.setState(
        <p>{this.state.name}</p>
        <p>{this.state.age}</p>
        <Item item={this.state.item}/>
+       <form onSubmit={this.submitok} >
+        <input onChange={this.changetext} type="text" />
+        <select onChange={this.changetext}>
+          <option value="value1"> value1</option>
+          <option value="value2"> value2</option>
+          <option value="value3"> value3</option>
+        </select>
+        <button >Submei</button>
+      </form>
       </div>
+
     );
   }
 }

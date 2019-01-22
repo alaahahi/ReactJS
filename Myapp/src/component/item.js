@@ -1,17 +1,19 @@
 import React, {Component } from 'react';
-class Item extends Component {
+import "./item.css";
 
+class Item extends Component {
     render(){
         //const {id,number}=this.props;
         //const item = this.props.item;
         const {item} = this.props;
         const theitem= item.map((item)=>{
-            return(
-                <div>
-                <p>{item.id}</p>
-                <p>{item.number}</p>
-                </div>
-            );
+            return item.number>999 ?
+            <div className="item" key={item.id}>
+            <p>{item.id}</p>
+            <p>{item.number}</p>
+            </div> 
+            :null
+
         })
 return(
         <div>
