@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Item from './component/item'
 class App extends Component {
+  constructer(){console.log("constraucter")}
   state= {
 name:'alaa',
 age:25,
