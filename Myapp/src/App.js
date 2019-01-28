@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import Item from './component/item'
 class App extends Component {
-  constructer(){console.log("constraucter")}
+
+  constructor(){  super();console.log("constraucter");}
   state= {
 name:'alaa',
 age:25,
@@ -33,7 +34,11 @@ this.setState(
     e.preventDefault();
     console.log(this.state.age)
   }
+  componentDidMount(){
+    console.log("componentDidMount");
+  };
   render() {
+    console.log("render");
     return (
       <div className="App">
        <button onClick={this.change}>cgange state</button>
